@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id='menu_cafe_root' name='Cafe' sequence="0"/>
+    <menuitem id='menu_cafe_master' name='Cafe Details' parent = "menu_cafe_root" sequence="0"/>
+
+</odoo>

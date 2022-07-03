@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="view_order_tree" model="ir.ui.view">
+        <field name="name">lunchm.order.tree</field>
+        <field name="model">lunchm.order</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="gender"/>
+                <field name="cafe_id"/>
+                <field name="combo_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_order_form" model="ir.ui.view">
+        <field name="name">lunchm.order.form</field>
+        <field name="model">lunchm.order</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="alert alert-info text-center o_form_header" role="alert">
+                        <a class="close" data-dismiss="alert" href="#"/>
+                        <div>
+                            <strong>Вы можете заказать до 23:59!</strong>
+                        </div>
+                    </div>
+                    <group>
+                        <group><field name="name"/></group>
+                        <group><field name="gender"/></group>
+                        <group><field name="cafe_id"/></group>
+                        <group><field name="combo_id"/></group>
+                    </group>
+                </sheet>
+
+                <!-- Chatter -->
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_order" model="ir.actions.act_window">
+        <field name="name">Orders</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">lunchm.order</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Создайте свой заказ!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id='menu_order' name='Orders' action='action_order' parent = "menu_cafe_root" sequence="0"/>
+</odoo>

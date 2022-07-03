@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access.lunchm.cafe,access_lunchm_cafe,om_lunch_manager.model_lunchm_cafe,base.group_user,1,1,1,1
+access.lunchm.order,access_lunchm_order,om_lunch_manager.model_lunchm_order,base.group_user,1,1,1,1
+access.lunchm.food.combo,access_lunchm_food_combo,om_lunch_manager.model_lunchm_food_combo,base.group_user,1,1,1,1

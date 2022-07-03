@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="view_food_combo_tree" model="ir.ui.view">
+        <field name="name">lunchm.food.combo.tree</field>
+        <field name="model">lunchm.food.combo</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="price"/>
+                <field name="cafe_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_food_combo_form" model="ir.ui.view">
+        <field name="name">lunchm.food.combo.form</field>
+        <field name="model">lunchm.food.combo</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group><field name="name"/></group>
+                        <group><field name="first_meal"/></group>
+                        <group><field name="second_meal"/></group>
+                        <group><field name="apitizer"/></group>
+                        <group><field name="drink"/></group>
+                        <group><field name="price"/></group>
+                        <group><field name="cafe_id"/></group>
+                    </group>
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+    <record id="action_food_combo" model="ir.actions.act_window">
+        <field name="name">Menus</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">lunchm.food.combo</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Создайте свое меню!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id='menu_food_combo' name='Menus' action='action_food_combo' parent = "menu_cafe_master" sequence="0"/>
+</odoo>
