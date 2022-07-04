@@ -27,6 +27,7 @@
                         <group><field name="drink"/></group>
                         <group><field name="price"/></group>
                         <group><field name="cafe_id"/></group>
+                        <group><field name="ordered_menu_count"/></group>
                     </group>
                 </sheet>
 
